@@ -1,0 +1,52 @@
+import generateTonic from "../global/tonic.js";
+import Qualities from "./qualities.js";
+import Sfx from "../global/sfx.js";
+import playQuiz from "./play.js";
+
+var AudioContext = window.AudioContext || window.webkitAudioContext;
+const context = new AudioContext();
+
+const app = new Vue({
+  el: "#app",
+  data() {
+    return {
+      correctAnswer: true,
+      qualities: null,
+      mysteryQuality: null,
+      numberCorrect: 0,
+      numberWrong: 0,
+      sfx: null,
+    }
+  },
+  methods: {
+    newQuiz() {
+      this.correctAnswer = false;
+      let tonic = generateTonic(261.6256, 11);
+      this.qualities = new Qualities(context, tonic);
+      this.sfx = new Sfx(context, tonic);
+      this.mysteryQuality = playQuiz(this.qualities);
+    },
+    repeatQuiz() {
+      playQuiz(this.qualities, this.mysteryQuality)
+    },
+    playMaj() {
+      this.qualities.playMaj(0)
+    },
+    checkAnswer(quality) {
+      if (quality !== this.mysteryQuality && !this.correctAnswer) {
+        this.numberWrong += 1;
+        this.sfx.wrong();
+        return
+      }
+
+      if (quality == this.mysteryQuality && !this.correctAnswer) {
+        this.correctAnswer = true;
+        this.numberCorrect += 1;
+        this.sfx.correct()
+      }
+    },
+    backHome() {
+      window.location.href = "./"
+    }
+  }
+})

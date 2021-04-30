@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/chord-naming.css">
+  <script src="./scripts/vue.min.js"></script>
+  <script type="module" src="./scripts/chord-naming/app.js" defer></script>
+  <title>Chord Progressions</title>
+</head>
+<body>
+  <div id="app">
+    <div class="supreme-container">
+      <header>
+        <span>Chord Progressions</span>
+        <button class="back-button" @click="backHome">&#8678; Back</button>
+      </header>
+      <div class="main-container">
+        <div class="quiz-gui">
+          <div class="quiz-scores">
+            <div class="quiz-correct">Correct:&nbsp;&nbsp;<span style="color: green;">{{ numberCorrect }}</span></div>
+            <div class="quiz-wrong">Errors:&nbsp;&nbsp;<span style="color: rgb(235,0,10);">{{ numberWrong }}</span></div>
+          </div>
+          <div class="quiz-controls">
+            <button @click="newQuiz" v-bind:disabled="!correctAnswer">Next</button>
+            <button @click="repeatQuiz">Repeat</button>
+            <button @click="repeatIChord">I Chord</button>     
+          </div>
+          <div class="quiz-answers">
+            <button @click="checkAnswer('ii')">ii</button>
+            <button @click="checkAnswer('iii')">iii</button>
+            <button @click="checkAnswer('IV')">IV</button>
+            <button @click="checkAnswer('V')">V</button>
+            <button @click="checkAnswer('vi')">vi</button>
+          </div>
+        </div>
+      </div>
+    </div>      
+  </div>
+</body>
+</html>

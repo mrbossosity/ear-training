@@ -1,0 +1,107 @@
+*, *:before, *:after {
+  font-family: 'Alegreya', 'Times New Roman', serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: purple;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: blueviolet;
+  font-size: 1.05em;
+}
+
+.supreme-container {
+  background: linear-gradient(to bottom right, lavender 35%, bisque 50%, orchid);
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+header {
+  background-color: white;
+  padding: 1ch;
+  padding-bottom: 0.75ch;
+  font-size: 2.5rem;
+  border-bottom: 4px solid darkgray;
+  box-shadow: 0 0.35ch 1ch white;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+}
+
+.header-placeholder {
+  padding: 1ch;
+  padding-bottom: 0.75ch;
+  font-size: 2.5rem;
+  border-bottom: 4px solid darkgray;
+  opacity: 0;
+}
+
+.main-container {
+  padding: 1.75ch;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75ch
+}
+
+.main-container > div {
+  min-height: 0;
+  max-height: 100%;
+  padding: 1.75ch;
+  background-color: rgba(255,255, 255, 0.7);
+}
+
+.welcome-container {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.app-links-container {
+  grid-row: 1; 
+  grid-column: 2;
+}
+
+.app-links {
+  padding-top: 1em;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3ch;
+}
+
+.interval-cheat-sheet-container {
+  overflow: scroll;
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.chord-cheat-sheet-container {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .app-links {
+    max-height: 50vh;
+    overflow: scroll;
+    grid-template-columns: repeat(auto-fill, 100%);
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 950px) {
+  .app-links {
+    max-height: 50vh;
+    overflow: scroll;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

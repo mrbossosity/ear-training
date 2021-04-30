@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/interval-naming.css">
+  <script src="./scripts/vue.min.js"></script>
+  <script type="module" src="./scripts/interval-naming/app.js" defer></script>
+  <title>Interval Naming</title>
+</head>
+<body>
+  <div id="app">
+    <div class="supreme-container">
+      <header>
+        <span>Interval Naming</span>
+        <button class="back-button" @click="backHome">&#8678; Back</button>
+      </header>
+      <div class="main-container">
+        <div class="quiz-gui">
+          <div class="quiz-scores">
+            <div class="quiz-correct">Correct:&nbsp;&nbsp;<span style="color: green;">{{ numberCorrect }}</span></div>
+            <div class="quiz-wrong">Errors:&nbsp;&nbsp;<span style="color: rgb(235,0,10);">{{ numberWrong }}</span></div>
+          </div>
+          <div class="quiz-controls">
+            <button @click="newQuiz" v-bind:disabled="!correctAnswer">Next</button>
+            <button @click="repeatQuiz">Repeat</button>
+          </div>
+          <div class="quiz-answers">
+            <button @click="checkAnswer('m2')">m2</button>
+            <button @click="checkAnswer('maj2')">M2</button>
+            <button @click="checkAnswer('m3')">m3</button>
+            <button @click="checkAnswer('maj3')">M3</button>
+            <button @click="checkAnswer('p4')">P4</button>
+            <button @click="checkAnswer('d5')">aug4/d5</button>
+            <button @click="checkAnswer('p5')">P5</button>
+            <button @click="checkAnswer('m6')">m6</button>
+            <button @click="checkAnswer('maj6')">M6</button>
+            <button @click="checkAnswer('m7')">m7</button>
+            <button @click="checkAnswer('maj7')">M7</button>
+            <button @click="checkAnswer('octave')">Oct</button>
+          </div>
+        </div>
+      </div>
+    </div>      
+  </div>
+</body>
+</html>

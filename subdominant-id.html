@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/subdominant-id.css">
+  <script src="./scripts/vue.min.js"></script>
+  <script type="module" src="./scripts/subdominant-id/app.js" defer></script>
+  <title>Subdominant Identification</title>
+</head>
+<body>
+  <div id="app">
+    <div class="supreme-container">
+      <header>
+        <span>Subdominant Identification</span>
+        <button class="back-button" @click="backHome">&#8678; Back</button>
+      </header>
+      <div class="main-container">
+        <div class="quiz-gui">
+          <div class="quiz-scores">
+            <div class="quiz-correct">Correct:&nbsp;&nbsp;<span style="color: green;">{{ numberCorrect }}</span></div>
+            <div class="quiz-wrong">Errors:&nbsp;&nbsp;<span style="color: rgb(235,0,10);">{{ numberWrong }}</span></div>
+          </div>
+          <div class="quiz-controls">
+            <button @click="newQuiz" v-bind:disabled="!correctAnswer">Next</button>
+            <button @click="repeatQuiz">Repeat</button>
+            <button @click="playI">I</button>
+          </div>
+          <div class="quiz-answers">
+            <button @click="checkAnswer('first')">1st</button>
+            <button @click="checkAnswer('second')">2nd</button>
+            <button @click="checkAnswer('third')">3rd</button>
+          </div>
+          <span class="quiz-reveal" v-show="correctAnswer">{{ mysteryProgression }}</span>
+        </div>
+      </div>
+    </div>      
+  </div>
+</body>
+</html>

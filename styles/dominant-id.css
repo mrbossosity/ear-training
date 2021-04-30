@@ -1,0 +1,132 @@
+*, *:before, *:after {
+  font-family: 'Alegreya', 'Times New Roman', serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden
+}
+
+.supreme-container {
+  height: 100vh;
+  background: linear-gradient(to bottom right, papayawhip, lightpink);
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+header {
+  background-color: white;
+  padding: 1ch;
+  padding-bottom: 0.75ch;
+  font-size: 2.5rem;
+  border-bottom: 4px solid darkgray
+}
+
+.back-button {
+  font-size: 2.35rem;
+  background-color: white;
+  border: none;
+  float: right;
+  cursor: pointer;
+}
+
+.main-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.75ch;
+  gap: 5ch;
+}
+
+.quiz-gui {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr auto;
+  background: white;
+  padding: 1.75ch;
+  border: 2px solid darkgray;
+  border-radius: 5px;
+  box-shadow: 0 0.5ch 0.65ch 0.125ch rgb(170,135,105);
+}
+
+.quiz-scores {
+  padding-right: 3.5ch;
+}
+
+.quiz-correct {
+  height: 100%;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.quiz-wrong {
+  height: 100%;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.quiz-controls {
+  display: flex;
+  gap: 1ch;
+  align-items: center;
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.quiz-answers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1ch;
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.quiz-controls > button {
+  font-size: 1.3rem;
+  background-color: white;
+  border: 2px solid darkgray;
+  border-radius: 5px;
+  box-shadow: 0 0.3ch 0.5ch darkorange;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.quiz-answers > button {
+  font-size: 1.3rem;
+  background-color: white;
+  border: 2px solid darkgray;
+  border-radius: 5px;
+  box-shadow: 0 0.3ch 0.3ch dodgerblue;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.quiz-controls > button:hover {
+  box-shadow: 0 0.3ch 0.5ch 0.1ch rgb(255, 81, 0); 
+}
+
+.quiz-answers > button:hover {
+  box-shadow: 0 0.3ch 0.4ch deepskyblue;
+}
+
+.quiz-reveal {
+  text-align: center;
+  background: white;
+  font-size: 1.3rem;
+  padding: 1.5ch;
+  border: 2px solid darkgray;
+  border-radius: 5px;
+  box-shadow: 0 0.5ch 0.65ch 0.125ch rgb(170,135,105);
+  position: absolute;
+  bottom: 1.75ch; left: 50%;
+  transform: translateX(-50%);
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/chord-quality.css">
+  <script src="./scripts/vue.min.js"></script>
+  <script type="module" src="./scripts/chord-quality/app.js" defer></script>
+  <title>Chord Quality</title>
+</head>
+<body>
+  <div id="app">
+    <div class="supreme-container">
+      <header>
+        <span>Chord Quality</span>
+        <button class="back-button" @click="backHome">&#8678; Back</button>
+      </header>
+      <div class="main-container">
+        <div class="quiz-gui">
+          <div class="quiz-scores">
+            <div class="quiz-correct">Correct:&nbsp;&nbsp;<span style="color: green;">{{ numberCorrect }}</span></div>
+            <div class="quiz-wrong">Errors:&nbsp;&nbsp;<span style="color: rgb(235,0,10);">{{ numberWrong }}</span></div>
+          </div>
+          <div class="quiz-controls">
+            <button @click="newQuiz" v-bind:disabled="!correctAnswer">Next</button>
+            <button @click="repeatQuiz">Repeat</button>
+            <button @click="playMaj">Maj</button>
+          </div>
+          <div class="quiz-answers">
+            <button @click="checkAnswer('maj')">Maj</button>
+            <button @click="checkAnswer('min')">min</button>
+            <button @click="checkAnswer('aug')">Aug</button>
+            <button @click="checkAnswer('dim')">dim</button>
+            <button @click="checkAnswer('sus2')">sus2</button>
+            <button @click="checkAnswer('sus4')">sus4</button>
+          </div>
+        </div>
+      </div>
+    </div>      
+  </div>
+</body>
+</html>
