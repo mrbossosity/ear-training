@@ -12,6 +12,30 @@ const app = new Vue({
     return {
       correctAnswer: true,
       scale: null,
+      iiCheck: {
+          checked: true,
+          chord: "ii"
+      },
+      iiiCheck: {
+        checked: true,
+        chord: "iii"
+      },
+      ivCheck: {
+        checked: true,
+        chord: "IV"
+      },
+      vCheck: {
+        checked: true,
+        chord: "V"
+      },
+      viCheck: {
+        checked: true,
+        chord: "vi"
+      },
+      viiCheck: {
+        checked: true,
+        chord: "vii"
+      },
       mysteryChord: null,
       numberCorrect: 0,
       numberWrong: 0,
@@ -24,7 +48,9 @@ const app = new Vue({
       let tonic = generateTonic(261.6256, 11);
       this.scale = new MajorScale(context, tonic);
       this.sfx = new Sfx(context, tonic);
-      this.mysteryChord = playQuiz(this.scale);
+      let all = [this.iiCheck, this.iiiCheck, this.ivCheck, this.vCheck, this.viCheck, this.viiCheck];
+      let checked = all.filter(chord => chord.checked);
+      this.mysteryChord = playQuiz(this.scale, null, checked);
     },
     repeatQuiz() {
       playQuiz(this.scale, this.mysteryChord)

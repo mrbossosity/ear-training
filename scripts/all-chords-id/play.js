@@ -1,4 +1,4 @@
-export default function playQuiz(scale, chord=null) {
+export default function playQuiz(scale, chord=null, checked) {
   if (chord !== null) {
     switch (chord) {
       case "ii":
@@ -22,28 +22,25 @@ export default function playQuiz(scale, chord=null) {
 
   scale.tonicize();
 
-  let degree = Math.floor(Math.random() * 5) + 2;
-  let mysteryChord;
-  switch (degree) {
-    case 2:
+  let mysteryChord = checked[Math.floor(Math.random() * checked.length)].chord;
+  switch (mysteryChord) {
+    case "ii":
       scale.playiiChord(4.0);
-      mysteryChord = "ii";
       break;
-    case 3:
+    case "iii":
       scale.playiiiChord(4.0);
-      mysteryChord = "iii"
       break;
-    case 4:
+    case "IV":
       scale.playIVChord(4.0);
-      mysteryChord = "IV"
       break;
-    case 5:
+    case "V":
       scale.playVChord(4.0);
-      mysteryChord = "V"
       break;
-    case 6:
+    case "vi":
       scale.playviChord(4.0);
-      mysteryChord = "vi"
+      break;
+    case "vii":
+      scale.playviiChord(4.0);
   };
 
   return mysteryChord
