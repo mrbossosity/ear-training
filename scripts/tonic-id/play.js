@@ -57,7 +57,7 @@ export default function playQuiz(scale, progression=null) {
         break;
 
       case "ii / I / V":
-        scale.playviChord(0);
+        scale.playiiChord(0);
         scale.playIChord(1.5);
         scale.playVChord(3);
         break;
