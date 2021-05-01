@@ -21,19 +21,19 @@ const app = new Vue({
         quality: "min"
       },
       augCheck: {
-        checked: true,
+        checked: false,
         quality: "aug"
       },
       dimCheck: {
-        checked: true,
+        checked: false,
         quality: "dim"
       },
       sus2Check: {
-        checked: true,
+        checked: false,
         quality: "sus2"
       },
       sus4Check: {
-        checked: true,
+        checked: false,
         quality: "sus4"
       },
       mysteryQuality: null,
