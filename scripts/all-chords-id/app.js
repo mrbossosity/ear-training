@@ -17,7 +17,7 @@ const app = new Vue({
           chord: "ii"
       },
       iiiCheck: {
-        checked: true,
+        checked: false,
         chord: "iii"
       },
       ivCheck: {
@@ -33,7 +33,7 @@ const app = new Vue({
         chord: "vi"
       },
       viiCheck: {
-        checked: true,
+        checked: false,
         chord: "vii"
       },
       mysteryChord: null,
