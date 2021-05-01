@@ -116,3 +116,16 @@ header {
 .quiz-answers > button:hover {
   box-shadow: 0 0.3ch 0.4ch deepskyblue;
 }
+
+.quiz-options {
+  text-align: center;
+  background: white;
+  font-size: 1.3rem;
+  padding: 1.5ch;
+  border: 2px solid darkgray;
+  border-radius: 5px;
+  box-shadow: 0 0.5ch 0.65ch 0.125ch rgb(170,135,105);
+  position: absolute;
+  bottom: 1.75ch; left: 50%;
+  transform: translateX(-50%);
+}
