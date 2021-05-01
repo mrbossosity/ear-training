@@ -15,6 +15,9 @@ export default function playQuiz(scale, chord=null, checked) {
         break;
       case "vi":
         scale.playviChord(0);
+        break;
+      case "vii":
+        scale.playviiChord(0);
     }
 
     return
