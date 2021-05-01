@@ -19,6 +19,7 @@ a:hover {
 }
 
 .supreme-container {
+  min-height: 100vh;
   background: linear-gradient(to bottom right, lavender 35%, bisque 50%, orchid);
   background-repeat: no-repeat;
   display: grid;
