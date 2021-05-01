@@ -1,4 +1,4 @@
-export default function playQuiz(scale, quality=null) {
+export default function playQuiz(scale, quality=null, checked) {
   if (quality !== null) {
     switch (quality) {
       case "maj":
@@ -23,30 +23,30 @@ export default function playQuiz(scale, quality=null) {
     return
   }
 
-  let degree = Math.floor(Math.random() * 6) + 1;
+  let randomQuality = checked[Math.floor(Math.random() * checked.length)].quality;
   let mysteryQuality;
-  switch (degree) {
-    case 1:
+  switch (randomQuality) {
+    case "maj":
       scale.playMaj(0);
       mysteryQuality = "maj";
       break;
-    case 2:
+    case "min":
       scale.playMin(0);
       mysteryQuality = "min"
       break;
-    case 3:
+    case "aug":
       scale.playAug(0);
       mysteryQuality = "aug"
       break;
-    case 4:
+    case "dim":
       scale.playDim(0);
       mysteryQuality = "dim"
       break;
-    case 5:
+    case "sus2":
       scale.playSus2(0);
       mysteryQuality = "sus2";
       break;
-    case 6:
+    case "sus4":
       scale.playSus4(0);
       mysteryQuality = "sus4";
   };

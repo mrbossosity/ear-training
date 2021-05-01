@@ -12,6 +12,30 @@ const app = new Vue({
     return {
       correctAnswer: true,
       qualities: null,
+      majCheck: {
+        checked: true,
+        quality: "maj"
+      },
+      minCheck: {
+        checked: true,
+        quality: "min"
+      },
+      augCheck: {
+        checked: true,
+        quality: "aug"
+      },
+      dimCheck: {
+        checked: true,
+        quality: "dim"
+      },
+      sus2Check: {
+        checked: true,
+        quality: "sus2"
+      },
+      sus4Check: {
+        checked: true,
+        quality: "sus4"
+      },
       mysteryQuality: null,
       numberCorrect: 0,
       numberWrong: 0,
@@ -24,13 +48,15 @@ const app = new Vue({
       let tonic = generateTonic(261.6256, 11);
       this.qualities = new Qualities(context, tonic);
       this.sfx = new Sfx(context, tonic);
-      this.mysteryQuality = playQuiz(this.qualities);
+      let all = [this.majCheck, this.minCheck, this.augCheck, this.dimCheck, this.sus2Check, this.sus4Check];
+      let checked = all.filter(quality => quality.checked)
+      this.mysteryQuality = playQuiz(this.qualities, null, checked);
     },
     repeatQuiz() {
       playQuiz(this.qualities, this.mysteryQuality)
     },
     playMaj() {
-      this.qualities.playMaj(0)
+      this.qualities.playMaj(0);
     },
     checkAnswer(quality) {
       if (quality !== this.mysteryQuality && !this.correctAnswer) {

@@ -37,6 +37,21 @@
             <button @click="checkAnswer('sus4')">sus4</button>
           </div>
         </div>
+        <div class="quiz-options">
+          <label for="maj-check">Maj</label>
+          <input type="checkbox" v-model="majCheck.checked" name="maj-check" id="maj-check">
+          <label for="min-check">min</label>
+          <input type="checkbox" v-model="minCheck.checked" name="min-check" id="min-check">
+          <label for="aug-check">Aug</label>
+          <input type="checkbox" v-model="augCheck.checked" name="aug-check" id="aug-check">
+          <label for="dim-check">dim</label>
+          <input type="checkbox" v-model="dimCheck.checked" name="dim-check" id="dim-check">
+          <label for="sus2-check">Sus2</label>
+          <input type="checkbox" v-model="sus2Check.checked" name="sus2-check" id="sus2-check">
+          <label for="sus4-check">Sus4</label>
+          <input type="checkbox" v-model="sus4Check.checked" name="sus4-check" id="sus4-check">
+
+        </div>
       </div>
     </div>      
   </div>
