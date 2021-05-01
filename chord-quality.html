@@ -29,12 +29,12 @@
             <button @click="playMaj">Maj</button>
           </div>
           <div class="quiz-answers">
-            <button @click="checkAnswer('maj')">Maj</button>
-            <button @click="checkAnswer('min')">min</button>
-            <button @click="checkAnswer('aug')">Aug</button>
-            <button @click="checkAnswer('dim')">dim</button>
-            <button @click="checkAnswer('sus2')">sus2</button>
-            <button @click="checkAnswer('sus4')">sus4</button>
+            <button v-bind:disabled="!majCheck.checked" @click="checkAnswer('maj')">Maj</button>
+            <button v-bind:disabled="!minCheck.checked" @click="checkAnswer('min')">min</button>
+            <button v-bind:disabled="!augCheck.checked" @click="checkAnswer('aug')">Aug</button>
+            <button v-bind:disabled="!dimCheck.checked" @click="checkAnswer('dim')">dim</button>
+            <button v-bind:disabled="!sus2Check.checked" @click="checkAnswer('sus2')">sus2</button>
+            <button v-bind:disabled="!sus4Check.checked" @click="checkAnswer('sus4')">sus4</button>
           </div>
         </div>
         <div class="quiz-options">
