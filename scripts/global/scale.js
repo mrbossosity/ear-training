@@ -24,43 +24,43 @@ export default class MajorScale {
   }
   playIChord(schedule) {
     playPitch(this.context, this.one, schedule);
-    playPitch(this.context, this.three, schedule + 0.03);
-    playPitch(this.context, this.hiFive, schedule + 0.06);
+    playPitch(this.context, this.three, schedule + 0.03, 1.6, 0.1);
+    playPitch(this.context, this.hiFive, schedule + 0.06, 1.6, 0.1);
   }
   playiiChord(schedule) {
     playPitch(this.context, this.two, schedule);
-    playPitch(this.context, this.hiFour, schedule + 0.03);
-    playPitch(this.context, this.hiSix, schedule + 0.06);
+    playPitch(this.context, this.hiFour, schedule + 0.03, 1.6, 0.1);
+    playPitch(this.context, this.hiSix, schedule + 0.06, 1.6, 0.1);
   }
   playiiiChord(schedule) {
     playPitch(this.context, this.three, schedule);
-    playPitch(this.context, this.hiFive, schedule + 0.03);
-    playPitch(this.context, this.hiSeven, schedule + 0.06);
+    playPitch(this.context, this.hiFive, schedule + 0.03, 1.6, 0.1);
+    playPitch(this.context, this.hiSeven, schedule + 0.06, 1.6, 0.1);
   }
   playIVChord(schedule) {
     playPitch(this.context, this.loFour, schedule);
-    playPitch(this.context, this.loSix, schedule + 0.03);
-    playPitch(this.context, this.one, schedule + 0.06);
+    playPitch(this.context, this.loSix, schedule + 0.03, 1.6, 0.1);
+    playPitch(this.context, this.one, schedule + 0.06, 1.6, 0.1);
   }
   playVChord(schedule) {
     playPitch(this.context, this.loFive, schedule);
-    playPitch(this.context, this.loSeven, schedule + 0.03);
-    playPitch(this.context, this.two, schedule + 0.06);
+    playPitch(this.context, this.loSeven, schedule + 0.03, 1.6, 0.1);
+    playPitch(this.context, this.two, schedule + 0.06, 1.6, 0.1);
   }
   playV7Chord(schedule) {
     playPitch(this.context, this.loFive, schedule);
-    playPitch(this.context, this.loSeven, schedule + 0.03);
-    playPitch(this.context, this.two, schedule + 0.06);
-    playPitch(this.context, this.hiFour, schedule + 0.09);
+    playPitch(this.context, this.loSeven, schedule + 0.03, 1.6, 0.1);
+    playPitch(this.context, this.two, schedule + 0.06, 1.6, 0.1);
+    playPitch(this.context, this.hiFour, schedule + 0.09, 1.6, 0.1);
   }
   playviChord(schedule) {
     playPitch(this.context, this.loSix, schedule);
-    playPitch(this.context, this.one, schedule + 0.03);
-    playPitch(this.context, this.three, schedule + 0.06);
+    playPitch(this.context, this.one, schedule + 0.03, 1.6, 0.1);
+    playPitch(this.context, this.three, schedule + 0.06, 1.6, 0.1);
   }
   playviiChord(schedule) {
     playPitch(this.context, this.loSeven, schedule);
-    playPitch(this.context, this.two, schedule + 0.03);
-    playPitch(this.context, this.hiFour, schedule + 0.06);
+    playPitch(this.context, this.two, schedule + 0.03, 1.6, 0.1);
+    playPitch(this.context, this.hiFour, schedule + 0.06, 1.6, 0.1);
   }
 }
