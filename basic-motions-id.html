@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/basic-motions-id.css">
+  <script src="./scripts/vue.min.js"></script>
+  <script type="module" src="./scripts/basic-motions-id/app.js" defer></script>
+  <title>Basic Motions ID</title>
+</head>
+<body>
+  <div id="app">
+    <div class="supreme-container">
+      <header>
+        <span>Basic Motions Recognition</span>
+        <button class="back-button" @click="backHome">&#8678; Back</button>
+      </header>
+      <div class="main-container">
+        <div class="quiz-gui">
+          <div class="quiz-scores">
+            <div class="quiz-correct">Correct:&nbsp;&nbsp;<span style="color: green;">{{ numberCorrect }}</span></div>
+            <div class="quiz-wrong">Errors:&nbsp;&nbsp;<span style="color: rgb(235,0,10);">{{ numberWrong }}</span></div>
+          </div>
+          <div class="quiz-controls">
+            <button @click="newQuiz" v-bind:disabled="!correctAnswer">Next</button>
+            <button @click="repeatQuiz">Repeat</button>
+            <button @click="repeatIChord">I</button>
+          </div>
+          <div class="quiz-answers">
+            <div class="quiz-answers-1">
+              <button v-bind:disabled="correctAnswer1" @click="checkAnswerOne('I')">I</button>
+              <button v-bind:disabled="correctAnswer1" @click="checkAnswerOne('ii')">ii</button>
+              <button v-bind:disabled="correctAnswer1" @click="checkAnswerOne('loiii')">iii</button>
+              <button v-bind:disabled="correctAnswer1" @click="checkAnswerOne('III')">III</button>
+              <button v-bind:disabled="correctAnswer1" @click="checkAnswerOne('IV')">IV</button>
+              <button v-bind:disabled="correctAnswer1" @click="checkAnswerOne('V')">V</button>
+              <button v-bind:disabled="correctAnswer1" @click="checkAnswerOne('vi')">vi</button>
+              <button v-bind:disabled="correctAnswer1" @click="checkAnswerOne('vii')">vii</button>
+            </div>
+            <div class="quiz-answers-2">
+              <button v-bind:disabled="correctAnswer2" @click="checkAnswerTwo('I')">I</button>
+              <button v-bind:disabled="correctAnswer2" @click="checkAnswerTwo('ii')">ii</button>
+              <button v-bind:disabled="correctAnswer2" @click="checkAnswerTwo('iii')">iii</button>
+              <button v-bind:disabled="correctAnswer2" @click="checkAnswerTwo('IV')">IV</button>
+              <button v-bind:disabled="correctAnswer2" @click="checkAnswerTwo('V')">V</button>
+              <button v-bind:disabled="correctAnswer2" @click="checkAnswerTwo('vi')">vi</button>
+              <button v-bind:disabled="correctAnswer2" @click="checkAnswerTwo('vii')">vii</button>
+            </div>
+          </div>
+          <span class="quiz-reveal" v-show="correctAnswer">{{ mysteryMotion }}</span>
+        </div>
+      </div>
+    </div>      
+  </div>
+</body>
+</html>
