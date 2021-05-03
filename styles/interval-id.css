@@ -10,7 +10,7 @@ body {
 
 .supreme-container {
   height: 100vh;
-  background: linear-gradient(to bottom right, paleturquoise, aquamarine);
+  background: linear-gradient(to bottom right, rgb(199, 255, 255) 42%, aquamarine);
   display: grid;
   grid-template-rows: auto 1fr;
 }
