@@ -13,7 +13,7 @@ const app = new Vue({
       correctAnswer: true,
       scale: null,
       iiCheck: {
-          checked: true,
+          checked: false,
           chord: "ii"
       },
       iiiCheck: {
