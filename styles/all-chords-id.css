@@ -10,7 +10,7 @@ body {
 
 .supreme-container {
   height: 100vh;
-  background: linear-gradient(to bottom right, bisque, lightsalmon);
+  background: linear-gradient(to bottom right, rgb(253, 245, 234), lightsalmon);
   display: grid;
   grid-template-rows: auto 1fr;
 }
